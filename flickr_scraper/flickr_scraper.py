@@ -96,7 +96,7 @@ for i in url_list:
     file = str(i)
     data = requests.get(i).content
 
-    with open('C:\\Users\\Sephi\\Desktop\\Python\\Web Scraing\\flickr_scraper\\downloaded_files\\' + file[40:], 'wb') as f:
+    with open('C:\\Users\\Sephi\\Desktop\\Python\\Web Scraing\\flickr_scraper\\downloaded_files\\' + ''.join([i for i in file[34:] if i.isalnum() or i == '.']), 'wb') as f:
         f.write(data)
 
 print('\nDone.\n')
